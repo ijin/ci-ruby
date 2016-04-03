@@ -1,0 +1,16 @@
+machine:
+  environment:
+  ruby:
+    version: 2.2.4
+dependencies:
+  pre:
+  cache_directories:
+test:
+  pre:
+    - env | sort -n
+    - rvm version
+    - rvm list known
+    - ruby -v
+  override:
+    - echo 'testing'
+  post:
